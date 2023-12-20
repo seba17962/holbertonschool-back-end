@@ -12,30 +12,28 @@ if __name__ == "__main__":
     """
     employee_ID = argv[1]
 
-    url_todos = \
-        f"https://jsonplaceholder.typicode.com/users/{employee_ID}/todos"
-    url_user = f"https://jsonplaceholder.typicode.com/users/{employee_ID}"
+    url_t = f"https://jsonplaceholder.typicode.com/users/{employee_ID}/todos"
+    url_u = f"https://jsonplaceholder.typicode.com/users/{employee_ID}"
 
-    response_todos = requests.get(url_todos)
-    response_user = requests.get(url_user)
-    count = 0
+    response_t = requests.get(url_t)
+    response_u = requests.get(url_u)
+    sum = 0
 
-    if response_todos.status_code >= 400 and response_user.status_code >= 400:
+    if response_t.status_code >= 400 and response_u.status_code >= 400:
         print("Error fetching data")
         exit()
 
-    response_todos_json = response_todos.json()
-    response_user_json = response_user.json()
+    response_t_jn = response_t.json()
+    response_u_jn = response_u.json()
 
-    name = response_user_json['name']
+    name = response_u_jn['name']
 
-    for task in response_todos_json:
+    for task in response_t_jn:
         if task['completed'] is True:
-            count += 1
+            sum += 1
 
-    print(f"Employee {name} is\
- done with tasks({count}/{len(response_todos_json)}):")
+    print(f"Employee {name} is done with tasks({sum}/{len(response_t_jn)}):")
 
-    for task in response_todos_json:
+    for task in response_t_jn:
         if task['completed'] is True:
             print(f"\t {task['title']}")
