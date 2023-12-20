@@ -14,8 +14,7 @@ if __name__ == '__main__':
 
     url_todos = \
         f"https://jsonplaceholder.typicode.com/users/{employee_ID}/todos"
-    url_user = \
-        f"https://jsonplaceholder.typicode.com/users/{employee_ID}"
+    url_user = f"https://jsonplaceholder.typicode.com/users/{employee_ID}"
 
     response_todos = requests.get(url_todos)
     response_user = requests.get(url_user)
@@ -33,6 +32,7 @@ if __name__ == '__main__':
     for task in response_todos_json:
         if task['completed'] is True:
             count += 1
+
     print(f"Employee {name} is\
  done with tasks({count}/{len(response_todos_json)}):")
 
