@@ -29,3 +29,4 @@ if __name__ == "__main__":
     for task in employee:
         if task['completed'] is True:
             print(f"\t {task['title']}")
+            
