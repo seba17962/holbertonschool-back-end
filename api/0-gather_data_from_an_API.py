@@ -6,7 +6,7 @@ import json
 import requests
 from sys import argv
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     """ Module for Asking apis info"""
     employee_id = argv[1]
     url_t = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
