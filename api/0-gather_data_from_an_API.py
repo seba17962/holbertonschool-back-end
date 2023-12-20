@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-import requests
-from sys import argv
-import json
 """
  task
 """
+import requests
+from sys import argv
+import json
+
 
 if __name__ == '__main__':
     """_summary_
