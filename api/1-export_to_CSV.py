@@ -31,13 +31,7 @@ if __name__ == "__main__":
 
     csv_filename = f"{user_id}.csv"
     with open(csv_filename, mode='w', newline='') as file:
-        csv_writer = csv.writer(file)
+        csv_writer = csv.writer(file, quoting=csv.QUOTE_ALL)
         
         for task in response_t_jn:
             csv_writer.writerow([user_id, username, task["completed"], task["title"]])
-
-
-    #for task in response_t_jn:
-     #   print(f'"{user_id}","{username}","{task["completed"]}","{task["title"]}"')
-
-
