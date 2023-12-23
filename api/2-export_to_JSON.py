@@ -30,17 +30,16 @@ if __name__ == "__main__":
     user_id = response_u_jn['id']
 
     json_filename = f"{user_id}.json"
-    
+
     json_data = {
-    user_id: [
-        {
-            "task": task["title"],
-            "completed": task["completed"],
-            "username": username
-        }
-        for task in response_t_jn
-    ]
-}
+        user_id: [
+            {
+                "task": task["title"],
+                "completed": task["completed"],
+                "username": username
+            }
+            for task in response_t_jn
+                ]
+                }
     with open(json_filename, 'w') as file:
         json.dump(json_data, file, indent=2)
-        
